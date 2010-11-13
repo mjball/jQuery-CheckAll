@@ -1,10 +1,10 @@
 /*----------------------------------------------------  
     CheckAll plugin for jQuery
-    Version: 1.1
+    Version: 1.2
 
     Copyright (c) 2010 Matt Ball
     
-    August 26, 2010
+    November 5, 2010
 
     Requires: jQuery 1.4.2+
 ------------------------------------------------------*/
