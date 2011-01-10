@@ -14,7 +14,7 @@ If you want to set any options differently from the default, pass in an `options
 
 ### Options ###
 
-All are optional (no pun intended).
+All are optional (pun intended).
 
      key           | default | description
     ----------------------------------------------------------------------------------------
