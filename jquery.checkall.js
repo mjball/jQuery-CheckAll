@@ -1,10 +1,10 @@
 /*----------------------------------------------------  
     CheckAll plugin for jQuery
-    Version: 1.2
+    Version: 1.3
 
-    Copyright (c) 2010 Matt Ball
+    Copyright (c) 2011 Matt Ball
     
-    November 5, 2010
+    June 14, 2011
 
     Requires: jQuery 1.4.2+
 ------------------------------------------------------*/
@@ -21,7 +21,10 @@
             groupSize = $slaves.length,
             onClick = typeof opts.onClick === 'function' ? opts.onClick : null,
             onMasterClick = typeof opts.onMasterClick === 'function' ? opts.onMasterClick : null,
-            reportTo = typeof opts.reportTo === 'function' ? opts.reportTo : null;
+            reportTo = typeof opts.reportTo === 'function' ? opts.reportTo : null,
+            
+            // for compatibility with 1.4.2 through 1.6
+            propFn = typeof $.fn.prop === 'function' ? 'prop' : 'attr';
         
         if (groupSize === 0)
         {
@@ -37,7 +40,7 @@
         function _autoEnable()
         {
             var numChecked = _countChecked();
-            $master.attr('checked', groupSize === numChecked);
+            $master[propFn]('checked', groupSize === numChecked);
             if (reportTo)
             {
                 reportTo(numChecked);
@@ -46,7 +49,7 @@
             
         function _autoDisable()
         {
-            $master.attr('checked', false);
+            $master[propFn]('checked', false);
             if (reportTo)
             {
                 reportTo(_countChecked());
@@ -56,7 +59,7 @@
         $master.unbind('click.checkAll').bind('click.checkAll', function (e)
         {
             var check_val = e.target.checked;
-            $slaves.add($master).attr('checked', check_val);
+            $slaves.add($master)[propFn]('checked', check_val);
             
             if (onMasterClick)
             {
