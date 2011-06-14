@@ -17,7 +17,7 @@
         var opts = $.extend({}, $.fn.checkAll.defaults, options),
             $master = this,
         
-            $slaves = $(group), // take a selector or a jQuery
+            $slaves = $(group).not($master), // take a selector or a jQuery
             selector = $slaves.selector,
             groupSize = $slaves.length,
             onClick = typeof opts.onClick === 'function' ? opts.onClick : null,
