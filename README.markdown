@@ -11,6 +11,8 @@ To use the checkbox with id `master` to control the checkboxes that are children
 If you want to set any options differently from the default, pass in an `options` object as the second argument:
 
     $('#master').checkAll('myForm input:checkbox', {sync: false});
+    
+Basic demo: http://jsfiddle.net/mattball/NBrg8/
 
 ### Options ###
 
@@ -22,3 +24,9 @@ All are optional (pun intended).
      onClick       |  null   | callback function, called whenever a slave checkbox is clicked
      onMasterClick |  null   | callback function, called when the master checkbox is clicked
      reportTo      |  null   | callback function, receives the number of slaves currently checked
+     
+### Bonus awesomeness ###
+
+- [It doesn't break if you accidentally select the master checkbox along with the slaves.](http://jsfiddle.net/mattball/fCEPa/)
+- It's lightweight thanks to `.live()`, so it can handle [as many checkboxes as you want to throw at it](http://jsfiddle.net/mattball/ZBjUV/).
+- Compatible with jQuery 1.4.2 through 1.6.
