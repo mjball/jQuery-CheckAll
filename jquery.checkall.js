@@ -1,6 +1,6 @@
 /*----------------------------------------------------  
     CheckAll plugin for jQuery
-    Version: 1.3
+    Version: 1.4
 
     Copyright (c) 2011 Matt Ball
     
@@ -17,15 +17,28 @@
         var opts = $.extend({}, $.fn.checkAll.defaults, options),
             $master = this,
         
-            $slaves = $(group), // take a selector or a jQuery
-            selector = $slaves.selector,
-            groupSize = $slaves.length,
+            $slaves = $(group),
+            selector,
+            groupSize,
             onClick = typeof opts.onClick === 'function' ? opts.onClick : null,
             onMasterClick = typeof opts.onMasterClick === 'function' ? opts.onMasterClick : null,
             reportTo = typeof opts.reportTo === 'function' ? opts.reportTo : null,
             
             // for compatibility with 1.4.2 through 1.6
             propFn = typeof $.fn.prop === 'function' ? 'prop' : 'attr';
+        
+        // omit the master if it was accidentally selected with the slaves
+        if ($slaves.index($master) === -1)
+        {
+            selector = $slaves.selector;
+        }
+        else    
+        {
+            $slaves = $slaves.not($master.selector);
+            selector = $slaves.selector.replace('.not(', ':not(');
+        }
+        
+        groupSize = $slaves.length;
         
         if (groupSize === 0)
         {
@@ -94,4 +107,3 @@
     
     $.fn.checkAll.defaults = {sync: true};
 }(jQuery));
-        
