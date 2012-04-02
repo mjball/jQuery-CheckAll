@@ -2,12 +2,12 @@
     CheckAll plugin for jQuery
     Version: 1.4
 
-    Copyright (c) 2011 Matt Ball
+    Copyright (c) 2012 Matt Ball
     
-    June 14, 2011
+    April 2, 2012
 
     Requires: jQuery 1.4.2+
-    Last tested with: 1.4.4, 1.5.2, 1.6
+    Last tested with: 1.4.4, 1.5.2, 1.6, 1.7.1
 ------------------------------------------------------*/
 
 ;(function($)
