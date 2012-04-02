@@ -2,21 +2,21 @@
 
 ## It's really simple. ##
 
+Basic demo: http://jsfiddle.net/mattball/NBrg8/
+
 ### Using the plugin ###
 
-To use the checkbox with id `master` to control the checkboxes that are children of the form with id `myForm`, this will do:
+To use the checkbox with id `master` to control the checkboxes that are children of the form with id `myForm`, this is all you need:
 
 ```
-$('#master').checkAll('myForm input:checkbox');
+$('#master').checkAll('#myForm input:checkbox');
 ```
 
-To override any of the default settings, pass in an `options` object as the second argument:
+To override any of the default settings, pass in an `options` object as the second argument. For instance, if I don't want to update the master checkbox when a slave is changed:
 
 ```
-$('#master').checkAll('myForm input:checkbox', {sync: false});
+$('#master').checkAll('#myForm input:checkbox', {sync: false});
 ```
-   
-Basic demo: http://jsfiddle.net/mattball/NBrg8/
 
 ### Options ###
 
