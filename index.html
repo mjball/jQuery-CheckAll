@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jQuery-CheckAll by mjball</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>jQuery-CheckAll</h1>
+<p>One-liner master/slave checkboxes</p>
+        <p class="view"><a href="https://github.com/mjball/jQuery-CheckAll">View the Project on GitHub <small>mjball/jQuery-CheckAll</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mjball/jQuery-CheckAll/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mjball/jQuery-CheckAll/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mjball/jQuery-CheckAll">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>It's really simple.</h2>
+
+<p>Basic demo: <a href="http://jsfiddle.net/mattball/NBrg8/">http://jsfiddle.net/mattball/NBrg8/</a></p>
+
+<h3>Using the plugin</h3>
+
+<p>To use the checkbox with id <code>master</code> to control the checkboxes that are children of the form with id <code>myForm</code>, this is all you need:</p>
+
+<pre><code>$('#master').checkAll('#myForm input:checkbox');
+</code></pre>
+
+<p>To override any of the default settings, pass in an <code>options</code> object as the second argument. For instance, if I don't want to update the master checkbox when a slave is changed:</p>
+
+<pre><code>$('#master').checkAll('#myForm input:checkbox', {sync: false});
+</code></pre>
+
+<h3>Options</h3>
+
+<p>All are optional (pun intended).</p>
+
+<pre><code>key           | default | description
+---------------------------------------------------------------------------------------
+sync          |  true   | boolean, keep the master sync'd with the slaves when a slave changes
+onClick       |  null   | callback function, called whenever a slave checkbox is clicked
+onMasterClick |  null   | callback function, called when the master checkbox is clicked
+reportTo      |  null   | callback function, receives the number of slaves currently checked
+</code></pre>
+
+<h3>Bonus awesomeness</h3>
+
+<ul>
+<li><a href="http://jsfiddle.net/mattball/fCEPa/">It doesn't break if you accidentally select the master checkbox along with the slaves.</a></li>
+<li>It's lightweight thanks to <code>.live()</code>, so it can handle <a href="http://jsfiddle.net/mattball/ZBjUV/">as many checkboxes as you want to throw at it</a>.</li>
+<li>Compatibility tested with jQuery 1.4.2 through 1.7.1.</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mjball">mjball</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
