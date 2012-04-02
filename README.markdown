@@ -4,7 +4,7 @@
 
 ### Using the plugin ###
 
-To use the checkbox with id `master` to control the checkboxes that are children of the form with id `myForm`, you would use a line of code such as:
+To use the checkbox with id `master` to control the checkboxes that are children of the form with id `myForm`, this will do:
 
 ```
 $('#master').checkAll('myForm input:checkbox');
