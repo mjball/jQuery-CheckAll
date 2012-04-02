@@ -10,7 +10,7 @@
     Last tested with: 1.4.4, 1.5.2, 1.6
 ------------------------------------------------------*/
 
-(function($)
+;(function($)
 {
     $.fn.checkAll = function (group, options)
     {
