@@ -22,7 +22,7 @@
             groupSize,
             onClick = typeof opts.onClick === 'function' ? opts.onClick : null,
             onMasterClick = typeof opts.onMasterClick === 'function' ? opts.onMasterClick : null,
-            reportTo = typeof opts.reportTo === 'function' ? opts.reportTo : null,
+            reportTo = typeof opts.reportTo === 'function' ? $.proxy(opts.reportTo, $master) : null,
             
             // for compatibility with 1.4.2 through 1.6
             propFn = typeof $.fn.prop === 'function' ? 'prop' : 'attr';
