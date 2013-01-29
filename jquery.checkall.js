@@ -7,7 +7,7 @@
     April 2, 2012
 
     Requires: jQuery 1.4.2+
-    Last tested with: 1.4.4, 1.5.2, 1.6, 1.7.1, 1.8.2
+    Last tested with: 1.4.4, 1.5.2, 1.6, 1.7.1, 1.8.2, 1.9
 ------------------------------------------------------*/
 
 ;(function($)
@@ -25,7 +25,9 @@
             reportTo = typeof opts.reportTo === 'function' ? $.proxy(opts.reportTo, $master) : null,
             
             // for compatibility with 1.4.2 through 1.6
-            propFn = typeof $.fn.prop === 'function' ? 'prop' : 'attr';
+            propFn = typeof $.fn.prop === 'function' ? 'prop' : 'attr',
+            onFn = typeof $.fn.on === 'function' ? 'on' : 'live',
+            offFn = typeof $.fn.off === 'function' ? 'off' : 'die';
         
         // omit the master if it was accidentally selected with the slaves
         if ($slaves.index($master) === -1)
@@ -89,7 +91,7 @@
         
         if (opts.sync)
         {
-            $(selector).die('click.checkAll').live('click.checkAll', function ()
+            $(selector)[offFn]('click.checkAll')[onFn]('click.checkAll', function ()
             {
                 this.checked ? _autoEnable() : _autoDisable();
                 
