@@ -35,7 +35,7 @@ reportTo      |  null   | callback function, receives the number of slaves curre
 
 - [It doesn't break if you accidentally select the master checkbox along with the slaves.](http://jsfiddle.net/mattball/fCEPa/)
 - It's lightweight thanks to `.live()`, so it can handle [as many checkboxes as you want to throw at it](http://jsfiddle.net/mattball/ZBjUV/).
-- Compatibility tested with jQuery 1.4.2 through 1.7.1.
+- Compatibility tested with jQuery 1.4.2 through 1.9.
 
 ### Questions? ###
 
